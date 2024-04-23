@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Serie } from './series';
+import { dataSeries } from './dataSeries';
+import { SerieService } from './series.service';
 
 @Component({
   selector: 'app-series',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serieService: SerieService) { }
+  series: Array<Serie> = [];
+  getSeriesList() {
+    this.serieService.getSeries().subscribe(series => {
+      this.series = series;
+    });
+  }
 
   ngOnInit() {
+    this.getSeriesList();
   }
 
 }

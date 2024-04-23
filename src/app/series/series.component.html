@@ -1,3 +1,24 @@
-<p>
-  series works!
-</p>
+<div class = "container-fluid">
+  <div class="row">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Channel</th>
+                  <th>Seasons</th>
+                </tr>
+            </thead>
+          <tbody id="series-table-body">
+            <tr *ngFor="let c of series">
+              <td>{{ c.id }}</td>
+              <td><a href="#" class="serie-link">{{ c.name }}</a></td>
+              <td>{{ c.channel }}</td>
+              <td>{{ c.seasons }}</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
